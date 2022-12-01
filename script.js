@@ -123,13 +123,13 @@ document.querySelectorAll('.weapons img').forEach((item) => {
             updateRoundCount.innerHTML = roundCount + '/5';
             addClassToDiv(pickWeapon,'hide');
             showResults.innerHTML = `You selected: ${playerSelection}, Computer selected: ${computerSelection}`;
-            if(value == 'player'){
+            if(value === 'player'){
                 winnerMessage.innerHTML = 'You Won the Round!';
                 removeClassFromDiv(results,'hide');
                 addClassToDiv(results,'win');
 
                 roundResult = 'win';
-            } else if(value == 'computer'){
+            } else if(value === 'computer'){
                 winnerMessage.innerHTML = 'Computer Won the Round!';
                 removeClassFromDiv(results,'hide');
                 addClassToDiv(results,'lose');
@@ -140,7 +140,7 @@ document.querySelectorAll('.weapons img').forEach((item) => {
                 addClassToDiv(results,'tie');
                 roundResult = 'tie';
             }
-            if(roundCount == 5){
+            if(roundCount === 5){
                 endGame();
             }
         }
