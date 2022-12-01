@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/logo.png" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <header class="header">
+        <h2 id="rock">Rock,</h2>
+        <h2 id="paper">Paper,</h2>
+        <h2 id="scissors">Scissors</h2>
+    </header>
+    <div class="starter-page">
+        <h1>
+            <span>ROCK</span>
+            <span>Paper</span>
+            <span>Scissors</span>
+        </h1>
+        <p class="intro">An Epic battle of Human Vs. Computer</p>
+        <button class="start-button">Start</button>
+        <div class="pick-character">
+            <h3>Pick A character</h3>
+            <ul class="characters-list">
+                <li><img id="batman" src="./assets/images/characters/batman.png" alt="character 1"/></li>
+                <li><img id="hulk" src="./assets/images/characters/hulk.png" alt="character 2" /></li>
+                <li><img id="spider" src="./assets/images/characters/spider.png" alt="character 3" /></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="play-area">
+            <div class="players">
+                <div class="player-info">
+                    <div class="player-character">
+                        <img alt="player character image">
+                    </div>
+                    <p>Score:
+                        <span class="player-score">0</span>
+                    </p>
+                </div>
+                <div class="draw-info">
+                    <div>
+                        <span>VS.</span>
+                    </div>
+                    <p>Draw Score:
+                        <span class="player-score">0</span>
+                    </p>
+                </div>
+                <div class="computer-info">
+                    <div class="player-character">
+                        <img src="./assets/images/characters/computer.png" alt="computer character image">
+                    </div>
+                    <p>Score:
+                        <span class="player-score">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="playerArena-round">
+                <span>Round:</span>
+                <span id="round-count">0/5</span>
+            </div>
+            <div class="playing-arena">
+                <div class="pick-weapon">
+                    <h4>Choose your weapon</h4>
+                    <ul class="weapons">
+                        <li class="rock"><img id="rock" src="./assets/images/weapons/rock.png" alt="rock image"/></li>
+                        <li class="paper"><img id="paper" src="./assets/images/weapons/paper.png" alt="paper image" /></li>
+                        <li class="scissors"><img id="scissors" src="./assets/images/weapons/scissors.png" alt="scissors image" /></li>
+                    </ul>
+                </div>
+                <div class="results">
+                    <div class="results-container">
+                        <h3 class="winner"></h3>
+                        <p class="show-results"></p>
+                        <button class="result-button">Next Round</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end-screen">
+        <div class="medium-container">
+            <h2 class="first-end-message"></h2>
+            <img alt="win/lose image"/>
+            <p class="second-end-message"></p>
+            <h3>Would you like a rematch?</h3>
+            <button class="rematch-button">Rematch</button>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &#169 Naseem</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

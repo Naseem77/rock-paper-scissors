@@ -1,0 +1,449 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/*Start page*/
+
+.starter-page{
+    padding: 0 2rem;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#d8d8d8, #9198e5);
+}
+.starter-page.hide{
+    display: none;
+}
+.starter-page h1 span {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 50px;
+    font-size: 3rem;
+    -webkit-animation: fade-in-left 0.5s  both 0.5s;
+    animation: fade-in-left 0.5s  both 0.5s;
+}
+.starter-page h1 span:first-child {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.starter-page h1 span:nth-child(2) {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.starter-page h1 span:last-child {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.starter-page .intro {
+    -webkit-animation: fade-in-left 0.2s ease-out both 1.3s;
+    animation: fade-in-left 0.2s ease-out both 1.5s;
+    margin-bottom: 3rem;
+}
+
+.starter-page .start-button {
+    padding: 10px 40px;
+    background-color: black;
+    color: #f9f9f9;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s;
+    animation: fade-in-left 0.2s ease-out both 1.8s;
+}
+
+.starter-page .start-button:hover {
+        box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
+}
+
+.starter-page .start-button.hide {
+    display: none;
+}
+
+
+/*Picking a character*/
+.pick-character {
+    padding-bottom: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    animation: fadeOutLeft forwards 3s;
+}
+.pick-character.hide{
+    display: none;
+}
+.pick-character h3{
+    font-size: 2rem;
+    margin: 20px;
+}
+
+.pick-character ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.pick-character li{
+    padding: 20px;
+}
+
+.pick-character img{
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+    margin: 0.5rem;
+    border-radius: 100%;
+    border: 5px solid #000000;
+    cursor: pointer;
+}
+.pick-character img:hover {
+    opacity: 0.5;
+}
+
+/*End of picking a character*/
+/*END OF Start page*/
+
+/*Header styling*/
+header {
+    background-color:rgb(78, 78, 108);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 2em;
+    z-index: 1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+header.hide{
+    display: none;
+}
+
+.header #rock {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.header #paper {
+    padding-left: 8px;
+    font-weight: 400;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header #scissors {
+    padding-left: 8px;
+    font-style: italic;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*END of Header styling*/
+
+/*Main container styling*/
+.main-container{
+    background: rgb(236, 236, 240);
+}
+
+.main-container.hide{
+    display: none;
+}
+
+.play-area{
+    padding-bottom:30px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.players{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    padding-top: 60px;
+}
+.players span{
+    font-weight: 600;
+}
+
+.draw-info p{
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.player-info .computer-info, .draw-info{
+    text-align: center;
+    padding: 0 20px;
+}
+.player-info p, .computer-info p{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.computer-info p span, .player-info p span, .draw-info p span{
+    font-size: 22px;
+}
+
+.player-character img{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 0.5rem;
+    border-radius: 100%;
+    border: 5px solid #000000;
+    
+}
+.players span {
+    font-size: 2rem;
+    color: #333;
+}
+
+.playerArena-round {
+    padding: 20px;
+    border-bottom: 1px solid #f9f9f9;
+    background-color: rgb(99, 96, 96);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.playerArena-round span{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.playing-arena {
+    width: 100%;
+    height: 22rem;
+    background-color: #333;
+    overflow: hidden;
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.computer-choice img,
+.player-choice img{
+    width: 10rem;
+    height: 10rem;
+    padding-top: 10px;
+    display: inline-block;
+    background-position: bottom -0.5rem center;
+    background-size: 60%;
+    border-radius: 50%;
+}
+
+.pick-weapon {
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    justify-content: center;
+    animation: fade-in-left 0.3s ease-out both 0.2s;
+}
+
+.pick-weapon.hide{
+    display: none;
+}
+
+.pick-weapon h4 {
+    font-size: 25px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pick-weapon ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.pick-weapon li:hover {
+    opacity: 0.6;
+}
+
+.pick-weapon li img {
+    border-radius: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    width: 24vw;
+    height: 24vw;
+    cursor: pointer;
+    margin: 1em;
+    background-size: 70%;
+    transition: 0.4s ease-out all;
+}
+
+
+.results{
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    animation: fade-in-left 0.2s ease-out both 0.2s;
+}
+
+.results h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+.results .show-results{
+    padding: 5px;
+    font-size: 20px;
+}
+
+.results .result-button {
+    padding: 10px 30px;
+    border: none;
+    background-color: #333;
+    color: #f9f9f9;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: 0.4s ease-out all;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.results .result-button:hover {
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
+}
+
+.results.tie {
+    background-color: #f9edc5;
+}
+.results.lose{
+    background-color: #eb7070;;
+}
+.results.win{
+    background-color: #70c7b5;
+}
+.results.hide {
+    display: none;
+}
+
+/*END of Main container styling*/
+
+/*End screen styling*/
+.end-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#d8d8d8, #9198e5);
+}
+
+.end-screen.hide{
+    display: none;
+}
+
+.medium-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    animation: fadeOutLeft forwards 5s;
+    padding-top: 100px;
+    
+}
+
+.medium-container h2{
+    padding: 10px;
+    font-size: 36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
+
+.medium-container img{
+    border-radius: 40%;
+    width: 300px;
+    height: auto;
+    
+}
+.medium-container p {
+    font-size: 18px;
+    padding-top: 10px;
+}
+.medium-container h3 {
+    font-size: 26px;
+    font-weight: 400;
+    padding: 10px;
+
+}
+
+.rematch-button {
+    align-items: center;
+    border: none;
+    background-color: #333;
+    color: #f9f9f9;
+    font-size: 1rem;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s ease-out all;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.rematch-button:hover {
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Footer styling*/
+footer {
+    text-align: center;
+    padding: 0.5em 0;
+    background-color: rgb(78, 78, 108);
+    color: #000000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+footer.hide{
+    display: none;
+}
+
+
+@keyframes fade-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
