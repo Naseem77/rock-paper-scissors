@@ -11,9 +11,7 @@
     height: 100vh;
     background: linear-gradient(#d8d8d8, #9198e5);
 }
-.starter-page.hide{
-    display: none;
-}
+
 .starter-page h1 span {
     display: inline-block;
     margin-right: 10px;
@@ -60,11 +58,6 @@
         box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
 }
 
-.starter-page .start-button.hide {
-    display: none;
-}
-
-
 /*Picking a character*/
 .pick-character {
     padding-bottom: 30px;
@@ -74,9 +67,7 @@
     text-align: center;
     animation: fadeOutLeft forwards 3s;
 }
-.pick-character.hide{
-    display: none;
-}
+
 .pick-character h3{
     font-size: 2rem;
     margin: 20px;
@@ -120,9 +111,6 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-header.hide{
-    display: none;
-}
 
 .header #rock {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
@@ -147,12 +135,8 @@ header.hide{
     background: rgb(236, 236, 240);
 }
 
-.main-container.hide{
-    display: none;
-}
-
 .play-area{
-    padding-bottom:30px;
+    padding-bottom:50px;
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
@@ -254,10 +238,6 @@ header.hide{
     animation: fade-in-left 0.3s ease-out both 0.2s;
 }
 
-.pick-weapon.hide{
-    display: none;
-}
-
 .pick-weapon h4 {
     font-size: 25px;
     color: #000000;
@@ -268,7 +248,6 @@ header.hide{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .pick-weapon li:hover {
@@ -286,7 +265,6 @@ header.hide{
     background-size: 70%;
     transition: 0.4s ease-out all;
 }
-
 
 .results{
     z-index: 3;
@@ -338,9 +316,6 @@ header.hide{
 .results.win{
     background-color: #70c7b5;
 }
-.results.hide {
-    display: none;
-}
 
 /*END of Main container styling*/
 
@@ -350,10 +325,6 @@ header.hide{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(#d8d8d8, #9198e5);
-}
-
-.end-screen.hide{
-    display: none;
 }
 
 .medium-container {
@@ -387,7 +358,6 @@ header.hide{
     font-size: 26px;
     font-weight: 400;
     padding: 10px;
-
 }
 
 .rematch-button {
@@ -410,7 +380,6 @@ header.hide{
     box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.75);
 }
 
-
 /*Footer styling*/
 footer {
     text-align: center;
@@ -421,10 +390,13 @@ footer {
     border-top-right-radius: 10px;
 }
 
-footer.hide{
+.pick-character.hide, .starter-page.hide,
+.starter-page .start-button.hide,
+header.hide, .main-container.hide,
+.pick-weapon.hide,.results.hide,
+.end-screen.hide,footer.hide{
     display: none;
 }
-
 
 @keyframes fade-in-left {
     0% {

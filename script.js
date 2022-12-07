@@ -19,9 +19,7 @@ const updatePlayerScore = document.querySelector('.player-info span');
 const updateComputerScore = document.querySelector('.computer-info span');
 const updateDrawScore = document.querySelector('.draw-info .player-score');
 const updateRoundCount = document.querySelector('.playerArena-round #round-count');
-
-const choices = ['rock','paper','scissors']
-
+const choices = ['rock','paper','scissors'];
     let player = 0;
     let computer = 0;
     let draw = 0;
@@ -31,129 +29,66 @@ const choices = ['rock','paper','scissors']
     let roundCount = 0;
     let roundResult = '';
 
-const addClassToDiv = (target, divElement) =>{
+const setClassAtt = (target, divElement) =>{
     target.classList.add(`${divElement}`)
 }
 
-const removeClassFromDiv = (target, divElement) => {
+const removeClassAtt = (target, divElement) => {
     target.classList.remove(`${divElement}`)
 }
 
 (function starterScreen(){
-    addClassToDiv(mainContainer,'hide');
-    addClassToDiv(header,'hide');
-    addClassToDiv(footer,'hide');
-    addClassToDiv(pickCharacter,'hide');
-    addClassToDiv(endScreen,'hide');
-
+    setClassAtt(mainContainer,'hide');
+    setClassAtt(header,'hide');
+    setClassAtt(footer,'hide');
+    setClassAtt(pickCharacter,'hide');
+    setClassAtt(endScreen,'hide');
 })();
 
 const startGame = () => {
-    addClassToDiv(starterPage,'hide');
-
-    removeClassFromDiv(mainContainer, 'hide');
-    removeClassFromDiv(header,'hide');
-    removeClassFromDiv(footer,'hide');
-    addClassToDiv(results,'hide');
+    setClassAtt(starterPage,'hide');
+    removeClassAtt(mainContainer, 'hide');
+    removeClassAtt(header,'hide');
+    removeClassAtt(footer,'hide');
+    setClassAtt(results,'hide');
+    setClassAtt(endScreen,'hide');
 }
-
-rematchButton.addEventListener('click', () => {
-    removeClassFromDiv(pickWeapon,'hide');
-    startGame();
-})
-
-startButton.addEventListener('click',() => {
-    addClassToDiv(startButton,'hide');
-    removeClassFromDiv(pickCharacter ,'hide');
-})
-
-document.querySelectorAll('.characters-list img').forEach((item) => {
-    item.addEventListener('click',(e) => {
-       const playerCharacter = e.target.id;
-        playerCharacterImg.src = `./assets/images/characters/${playerCharacter+'.png'}`;
-        startGame();
-    })
-})
 
 const computerPlay = () => {
     return choices[Math.floor(Math.random() * choices.length)]
 }
 
 const endGame = () => {
-    addClassToDiv(mainContainer,'hide');
+    setClassAtt(mainContainer,'hide');
     if(playerScore > computerScore){
-        firstEndMessage.innerHTML = "You Won!"
+        firstEndMessage.textContent = "You Won!"
         endScreenImg.src = './assets/images/gameStatus/win.png'
-        secondEndMessage.innerHTML = "You defeated the computer"
+        secondEndMessage.textContent = "You defeated the computer"
     } else if(playerScore < computerScore){
-        firstEndMessage.innerHTML = "You Lost!"
+        firstEndMessage.textContent = "You Lost!"
         endScreenImg.src = './assets/images/gameStatus/lose.png'
-        secondEndMessage.innerHTML = "The computer defeated you"
+        secondEndMessage.textContent = "The computer defeated you"
     } else {
-        firstEndMessage.innerHTML = "Its a Draw"
+        firstEndMessage.textContent = "Its a Draw"
         endScreenImg.src = './assets/images/gameStatus/draw.png'
-        secondEndMessage.innerHTML = "You draw with the computer"
+        secondEndMessage.textContent = "You draw with the computer"
     }
-    removeClassFromDiv(endScreen,'hide');
-    updateRoundCount.innerHTML = 1 + '/5';
-    updatePlayerScore.innerHTML = 0;
-    updateComputerScore.innerHTML = 0;
-    updateDrawScore.innerHTML = 0;
+    removeClassAtt(endScreen,'hide');
+    updateRoundCount.textContent = 1 + '/5';
+    updatePlayerScore.textContent = 0;
+    updateComputerScore.textContent = 0;
+    updateDrawScore.textContent = 0;
     player = 0, computer = 0, draw = 0, playerScore = 0, computerScore = 0;
     drawScore = 0, roundCount = 0;
 }
 
-
-resultsButton.addEventListener('click', () => {
-    console.log(roundResult);
-    removeClassFromDiv(results,roundResult);
-    addClassToDiv(results,'hide');
-    removeClassFromDiv(pickWeapon,'hide');
-})
-
-document.querySelectorAll('.weapons img').forEach((item) => {
-    item.addEventListener('click',(e) => {
-        e.preventDefault();
-        if(roundCount < 5){
-            const playerSelection = e.target.id;
-            const computerSelection = computerPlay();
-            let value = playRound(playerSelection, computerSelection);
-            
-            roundCount++;
-            updateRoundCount.innerHTML = roundCount + '/5';
-            addClassToDiv(pickWeapon,'hide');
-            showResults.innerHTML = `You selected: ${playerSelection}, Computer selected: ${computerSelection}`;
-            if(value === 'player'){
-                winnerMessage.innerHTML = 'You Won the Round!';
-                removeClassFromDiv(results,'hide');
-                addClassToDiv(results,'win');
-
-                roundResult = 'win';
-            } else if(value === 'computer'){
-                winnerMessage.innerHTML = 'Computer Won the Round!';
-                removeClassFromDiv(results,'hide');
-                addClassToDiv(results,'lose');
-                roundResult = 'lose';
-            } else {
-                winnerMessage.innerHTML = 'Its a tie!';
-                removeClassFromDiv(results,'hide');
-                addClassToDiv(results,'tie');
-                roundResult = 'tie';
-            }
-            if(roundCount === 5){
-                endGame();
-            }
-        }
-    })
-})
-
 const updateScore = (type) => {
     if(type === 'player'){
-        updatePlayerScore.innerHTML = playerScore;
+        updatePlayerScore.textContent = playerScore;
     } else if(type === 'computer'){
-        updateComputerScore.innerHTML = computerScore;
+        updateComputerScore.textContent = computerScore;
     } else{
-        updateDrawScore.innerHTML = drawScore;
+        updateDrawScore.textContent = drawScore;
     }
 }
 
@@ -181,3 +116,66 @@ const playRound = (playerSelection, computerSelection) => {
           return 'draw';
     }
 }
+
+const displayWinnerMsg = (value) => {
+    if(value === 'player'){
+        winnerMessage.textContent = 'You Won the Round!';
+        removeClassAtt(results,'hide');
+        setClassAtt(results,'win');
+        roundResult = 'win';
+    } else if(value === 'computer'){
+        winnerMessage.textContent = 'Computer Won the Round!';
+        removeClassAtt(results,'hide');
+        setClassAtt(results,'lose');
+        roundResult = 'lose';
+    } else {
+        winnerMessage.textContent = 'Its a tie!';
+        removeClassAtt(results,'hide');
+        setClassAtt(results,'tie');
+        roundResult = 'tie';
+    }
+}
+
+const nextRoundDisplay = () => {
+    removeClassAtt(results,roundResult);
+    setClassAtt(results,'hide');
+    removeClassAtt(pickWeapon,'hide');
+}
+
+rematchButton.addEventListener('click', () => {
+    removeClassAtt(pickWeapon,'hide');
+    startGame();
+})
+
+startButton.addEventListener('click',() => {
+    setClassAtt(startButton,'hide');
+    removeClassAtt(pickCharacter ,'hide');
+})
+
+resultsButton.addEventListener('click', nextRoundDisplay);
+
+document.querySelectorAll('.characters-list img').forEach((item) => {
+    item.addEventListener('click',(e) => {
+       const playerCharacter = e.target.id;
+        playerCharacterImg.src = `./assets/images/characters/${playerCharacter+'.png'}`;
+        startGame();
+    })
+})
+
+document.querySelectorAll('.weapons img').forEach((item) => {
+    item.addEventListener('click',(e) => {
+        if(roundCount < 5){
+            const playerSelection = e.target.id;
+            const computerSelection = computerPlay();
+            let value = playRound(playerSelection, computerSelection);
+            roundCount++;
+            updateRoundCount.textContent = roundCount + '/5';
+            setClassAtt(pickWeapon,'hide');
+            showResults.textContent = `You selected: ${playerSelection}, Computer selected: ${computerSelection}`;
+            displayWinnerMsg(value);
+            if(roundCount === 5){
+                endGame();
+            }
+        }
+    })
+})
